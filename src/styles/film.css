@@ -1,0 +1,16 @@
+.film_card{
+    width: 25rem;
+    margin: 2px auto;
+    background-color: #f8f9fb;
+}
+.title{
+    margin : 5px
+}
+.detailed_item{
+    text-align: left;
+    list-style-type: none;
+}
+p{
+    margin : 0;
+    padding: 0;
+}
