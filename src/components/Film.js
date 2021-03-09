@@ -1,11 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
+import Loader from './Loader'
 import '../styles/film.css'
+
 const Film = ({ film }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isLoading,setIsLoading] = useState(false)
+    const [planets, setPlanets] = useState([])
+    const [starships, setStarships] = useState([])
 
-    const isOpenHandler = () => {
-        setIsOpen(!isOpen)
+    const isOpenHandler = async () => {
+        setIsLoading(true)
+        const resFilm = await Promise.all(film.planets.map(planet => {
+            return axios.get(planet.slice(20))
+        }))
+        const resStarship = await Promise.all(film.starships.map(starship => {
+            return axios.get(starship.slice(20))
+        }))
+        setPlanets(oldArray => [...oldArray, ...resFilm.map(data => data.data.name)])
+        setStarships(oldArray => [...oldArray, ...resStarship.map(data => data.data.name)])
+        setIsLoading(false)
+        setIsOpen(true)
     }
+    const isCloseHandler = () => {
+        setIsOpen(false)
+        setPlanets([])
+        setStarships([])
+    }
+    
     return (
         <div className='card film_card'>
             <div className='card-body '>
@@ -16,18 +38,26 @@ const Film = ({ film }) => {
                     type='button'
                     className='btn btn-secondary btn-sm'
                     onClick={isOpenHandler}
+                    disabled={isOpen}
                 >
-                    {!isOpen ? <p>Show Details</p> : <p>Hide Details</p>}
+                    {isLoading ? <Loader/> : 'Show Details'}
                 </button>
                 {isOpen &&
                     <div>
                         <ol className='detailed_body'>
-                            <li className='detailed_item'><b>Premier:</b>{film.release_date}</li>
-                            <li className='detailed_item'><b> Director :</b> {film.director}</li>
-                            <li className='detailed_item'><b>Producers :</b>  {film.producer}</li>
+                            <li className='detailed_item'><b>Premier : </b>{film.release_date}</li>
+                            <li className='detailed_item'><b> Director : </b> {film.director}</li>
+                            <li className='detailed_item'><b>Producers : </b>  {film.producer}</li>
+                            <li className='detailed_item'><b>Planets :</b>  {planets.join(', ')}</li>
+                            <li className='detailed_item'><b>Starships :</b>  {starships.join(', ')}</li>
                             <li className='detailed_item'><i>{film.opening_crawl}</i></li>
-                            {/* <li className='detailed_item'>Premier : {film.edited}</li> */}
                         </ol>
+                        <button
+                            type='button'
+                            className='btn-close btn-sm'
+                            onClick={isCloseHandler}
+                        >
+                        </button>
                     </div>
                 }
             </div>

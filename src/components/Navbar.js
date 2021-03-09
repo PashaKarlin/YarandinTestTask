@@ -1,8 +1,19 @@
 import React from 'react'
+import '../styles/nav.css'
 
-const Navbar = () => {
+const Navbar = ({ setSearchTerm, searchTerm, sorted, setSorted }) => {
+
+    const handleSort = () => {
+        setSorted(!sorted)
+    }
+    const changeHandler = (event) => {
+        setSearchTerm(event.target.value)
+    }
+    const submitHandler = (event) => {
+        event.preventDefault()
+    }
     return (
-        <div>
+        <div className = 'sticky-top'>
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
                 <div className='container-fluid'>
                     <a className="navbar-brand">
@@ -19,11 +30,32 @@ const Navbar = () => {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <button type="button" className="btn btn btn-outline-success">Sort by alphabet</button>
+                    {
+                        sorted
+                            ? <button
+                                type="button"
+                                className="btn btn btn-outline-success"
+                                onClick={handleSort}
+                            >
+                                Unsort
+                                 </button>
+                            : <button
+                                type="button"
+                                className="btn btn btn-outline-success"
+                                onClick={handleSort}
+                            >
+                                Sort by alphabet
+                                </button>
+                    }
+
                 </div>
-                <form className="d-flex">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
+                <form className="d-flex" onSubmit = {submitHandler}>
+                    <input
+                        className="form-control me-2"
+                        placeholder="Search"
+                        aria-label="Search"
+                        onChange={changeHandler}
+                    />
                 </form>
             </nav>
         </div>
