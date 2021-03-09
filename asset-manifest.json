@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/YarandinTestTask/static/css/main.9ff4ff4f.chunk.css",
-    "main.js": "/YarandinTestTask/static/js/main.682f70c8.chunk.js",
-    "main.js.map": "/YarandinTestTask/static/js/main.682f70c8.chunk.js.map",
-    "runtime-main.js": "/YarandinTestTask/static/js/runtime-main.f447d52b.js",
-    "runtime-main.js.map": "/YarandinTestTask/static/js/runtime-main.f447d52b.js.map",
-    "static/js/2.588c8d45.chunk.js": "/YarandinTestTask/static/js/2.588c8d45.chunk.js",
-    "static/js/2.588c8d45.chunk.js.map": "/YarandinTestTask/static/js/2.588c8d45.chunk.js.map",
-    "static/js/3.48d49f25.chunk.js": "/YarandinTestTask/static/js/3.48d49f25.chunk.js",
-    "static/js/3.48d49f25.chunk.js.map": "/YarandinTestTask/static/js/3.48d49f25.chunk.js.map",
-    "index.html": "/YarandinTestTask/index.html",
-    "static/css/main.9ff4ff4f.chunk.css.map": "/YarandinTestTask/static/css/main.9ff4ff4f.chunk.css.map",
-    "static/js/2.588c8d45.chunk.js.LICENSE.txt": "/YarandinTestTask/static/js/2.588c8d45.chunk.js.LICENSE.txt"
+    "main.css": "/tarandintesttask/static/css/main.9ff4ff4f.chunk.css",
+    "main.js": "/tarandintesttask/static/js/main.682f70c8.chunk.js",
+    "main.js.map": "/tarandintesttask/static/js/main.682f70c8.chunk.js.map",
+    "runtime-main.js": "/tarandintesttask/static/js/runtime-main.37ca0024.js",
+    "runtime-main.js.map": "/tarandintesttask/static/js/runtime-main.37ca0024.js.map",
+    "static/js/2.588c8d45.chunk.js": "/tarandintesttask/static/js/2.588c8d45.chunk.js",
+    "static/js/2.588c8d45.chunk.js.map": "/tarandintesttask/static/js/2.588c8d45.chunk.js.map",
+    "static/js/3.48d49f25.chunk.js": "/tarandintesttask/static/js/3.48d49f25.chunk.js",
+    "static/js/3.48d49f25.chunk.js.map": "/tarandintesttask/static/js/3.48d49f25.chunk.js.map",
+    "index.html": "/tarandintesttask/index.html",
+    "static/css/main.9ff4ff4f.chunk.css.map": "/tarandintesttask/static/css/main.9ff4ff4f.chunk.css.map",
+    "static/js/2.588c8d45.chunk.js.LICENSE.txt": "/tarandintesttask/static/js/2.588c8d45.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f447d52b.js",
+    "static/js/runtime-main.37ca0024.js",
     "static/js/2.588c8d45.chunk.js",
     "static/css/main.9ff4ff4f.chunk.css",
     "static/js/main.682f70c8.chunk.js"
