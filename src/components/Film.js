@@ -12,10 +12,10 @@ const Film = ({ film }) => {
     const isOpenHandler = async () => {
         setIsLoading(true)
         const resFilm = await Promise.all(film.planets.map(planet => {
-            return axios.get(planet.slice(20))
+            return axios.get(`https://swapi.dev/api${planet.slice(20)}`)
         }))
         const resStarship = await Promise.all(film.starships.map(starship => {
-            return axios.get(starship.slice(20))
+            return axios.get(`https://swapi.dev/api${starship.slice(20)}`)
         }))
         setPlanets(oldArray => [...oldArray, ...resFilm.map(data => data.data.name)])
         setStarships(oldArray => [...oldArray, ...resStarship.map(data => data.data.name)])

@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Film from './Film'
 import Navbar from './Navbar'
 
@@ -10,7 +10,7 @@ const Films = () => {
     const sortedData = [...data]
 
     useEffect(() => {
-        axios.get('/films').then(res => {
+        axios.get('https://swapi.dev/api/films').then(res => {
             setData(res.data.results)
         })
     }, [])
